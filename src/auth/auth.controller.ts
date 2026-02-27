@@ -13,8 +13,6 @@ export class AuthController{
 
  }
         @Post('singin')
-        signin(){
-           return "hello"
-            }
-   
+        singin(){
+        return this.authService.signin()}
 }
