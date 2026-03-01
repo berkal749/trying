@@ -9,19 +9,19 @@ export class WeatherAppController {
   @Get('today/:cityName')
   async getTodayWeatherCity(@Param('cityName') cityName: any) {
 
-  let weatherData=  await this.weatherAppService.callW(cityName);
-  let result = await firstValueFrom(weatherData)
+  let result=  await this.weatherAppService.callW(cityName);
+  
 //    const display= {
 //       city: weatherData.data.name,
 //       temperature: weatherData.data.main.temp,
 //       description: weatherData.data.weather[0].description,
 //       humidity: weatherData.data.main.humidity,
 //     };
-  console.log({main: result.data.weather.main ,
-              cityName: result.data.name,
+  console.log({main: result.weather.main ,
+              cityName: result.name,
               
     
   });
-    return result.data
+    return result
   }
 }
